@@ -24,10 +24,12 @@ defaultColor.addEventListener('mouseover', changeToDefault);
 ytAddButton.addEventListener('click', () => {
     const input = document.getElementById('yt-text');
     const youtubeList = document.getElementById('youtube-list')
+    const dateAdded = moment(new Date().getTime()).format("MMM Do YY");
     let newChannel = document.createElement('li');
 
     let channelName = document.createTextNode(input.value);
     newChannel.append(channelName);
+    newChannel.append(' - Date Recommendation Added: ' + dateAdded);
     youtubeList.append(newChannel);
     input.value = "";
 
@@ -36,10 +38,12 @@ ytAddButton.addEventListener('click', () => {
 twitchAddButton.addEventListener('click', () => {
     const input = document.getElementById('twitch-text');
     const twitchList = document.getElementById('twitch-list')
+    const dateAdded = moment(new Date().getTime()).format("MMM Do YY");
     let newChannel = document.createElement('li');
 
     let channelName = document.createTextNode(input.value);
     newChannel.append(channelName);
+    newChannel.append(' - Date Recommendation Added: ' + dateAdded);
     twitchList.append(newChannel);
     input.value = "";
 
